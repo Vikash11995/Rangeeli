@@ -101,8 +101,9 @@ if(!intervalId){
     intervalId = setInterval(changeBg,1000);
 }
     function changeBg(){
-           document.body.style.backgroundColor = randomColour()
-              document.getElementById('heading').innerText = "Color-Code is " + randomColour();
+          let colorCode = document.body.style.backgroundColor = randomColour()
+            console.log(colorCode)
+            document.getElementById('heading').innerText = "Color-Code is " + colorCode;
     }
 }
 const stopChangingColor = function (){

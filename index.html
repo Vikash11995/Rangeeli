@@ -97,7 +97,9 @@ background-color: red;
     console.log(text)
 let intervalId; 
 let startChangingColor = function (){
-intervalId = setInterval(changeBg,1000);
+if(!intervalId){
+    intervalId = setInterval(changeBg,1000);
+}
     function changeBg(){
            document.body.style.backgroundColor = randomColour()
               document.getElementById('heading').innerText = "Color-Code is " + randomColour();
@@ -105,6 +107,7 @@ intervalId = setInterval(changeBg,1000);
 }
 const stopChangingColor = function (){
     clearInterval(intervalId);
+    intervalId = null;
 }
 document.getElementById('start').addEventListener('click',
     startChangingColor);
